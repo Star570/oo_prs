@@ -44,7 +44,7 @@ class Human < Player
       puts "Pick one: (p/r/s)"
       c = gets.chomp.downcase
     end until Game::CHOICES.keys.include?(c)
-      puts "#{name} choose '#{c}'."
+      puts "#{name} choose '#{c}' for #{Game::CHOICES[c]}."
       self.hand = Hand.new(c)
   end
 end
@@ -52,7 +52,7 @@ end
 class Computer < Player
   def pick_hands
     c = Game::CHOICES.keys.sample
-    puts "#{name} choose '#{c}'."
+    puts "#{name} choose '#{c}' for #{Game::CHOICES[c]}."
     self.hand = Hand.new(c)
   end
 end
